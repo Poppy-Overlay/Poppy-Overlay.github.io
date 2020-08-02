@@ -74,7 +74,7 @@
 
 	<center><img src="poppyback.gif"></center>
       <div>
-	      
+		<button type="button">Donate and get your profile picture overlay</button>
           <h2>Get excited for [insert amazing cause/event here]!</h2>
           <p>Create a profile overlay with our theme. How better to show your anticipation for [insert amazing cause/event here]? This is how you can create your overlay:</p>
           <ol>
@@ -87,43 +87,8 @@
 
 
 
-<div class="overlay-div">
-  	<input type="file" accept="image/*" onchange="loadFile(event)" id="file" class="inputfile" />
-	<label for="file">Choose Profile Image</label>
 
-	<img id="overlay-img" src="plain.png"/>
-</div>
-	<script>
-	  var loadFile = function(event) {
-	    var reader = new FileReader();
-	    reader.onload = function() {
-	      createOverlay(reader.result);
-	    };
-	    reader.readAsDataURL(event.target.files[0]);
-	  };
-
-	var createOverlay = function(uploadImage) {
-	  	var baseImg = uploadImage;
-	  	Caman("#overlay-img", function () {
-			this.brightness(5).render();
-			this.newLayer(function() {
-			    this.setBlendingMode("normal");
-			    this.opacity(100);
-			    this.overlayImage(baseImg);
-		  	});
-
-		  	this.newLayer(function() {
-			    this.setBlendingMode("normal");
-			    this.opacity(90);
-			    this.overlayImage('overlay.png');
-		  	});
-
-		  	$('#overlay-img').removeAttr('style');
-		});
-
-		$('#overlay-img').removeAttr('style');
-	};
-	</script>
+	
 
 <div class="madeBy">Made by <a href="http://dora.rocks/" target="_blank">Dora Dzvonyar</a> using <a href="http://camanjs.com/" target="_blank">CamanJS</a></div>
 
